@@ -1,0 +1,13 @@
+#referencia - https://imasters.com.br/data/utilizando-docker-com-mysql
+
+$ docker run -p 3306:3306 -p 33060:33060 --name=switch-mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql/mysql-server:latest
+$ docker exec -it switch-mysql bash
+    $ mysql -uroot -p
+        $ admin
+        $ update mysql.user set host = '%' where user='root';
+        $ docker restart switch-mysql
+
+Para utilizar ferramentas do entityes no cli -- não necessário se estiver usando o visual studio
+referencia: https://stackoverflow.com/questions/41536603/visual-studio-code-entity-framework-core-add-migration-not-recognized
+Instalar a referencia: Microsoft.EntityFrameworkCore.Tools.DotNet e adicionar no tools do dotnet cli
+$ dotnet tool install --global dotnet-ef
