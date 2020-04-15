@@ -11,6 +11,8 @@ namespace Switch.Infra.Data.Context
         // Desvantagens: vc não define o tamanho das colunas na tabela
         // Vantagens: mais produtivo se esses detalhes não são importantes
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Postagem> Postagens { get; set; } 
+        public DbSet<StatusRelacionamento> StatusRelacionamento { get; set; }
 
         public SwitchContext(DbContextOptions options) : base(options)
         {
