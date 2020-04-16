@@ -1,5 +1,6 @@
 ﻿using Switch.Domain.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace Switch.Domain.Entityes
 {
@@ -13,5 +14,10 @@ namespace Switch.Domain.Entityes
         public DateTime DataNascimento { get; set; }
         public SexoEnum Sexo { get; set; }
         public string UrlFoto { get; set; }
+
+        // Propriedade de navegação
+        public virtual Identificacao Identificacao { get; set; }
+        public virtual ICollection<Postagem> Postagens { get; set; }
+
     }
 }

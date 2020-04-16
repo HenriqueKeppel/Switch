@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Switch.Infra.Data.Context;
 
 namespace Switch.Infra.Data.Migrations
 {
     [DbContext(typeof(SwitchContext))]
-    partial class SwitchContextModelSnapshot : ModelSnapshot
+    [Migration("20200416083533_AddRelacionamentoPostagemPorConfiguracao")]
+    partial class AddRelacionamentoPostagemPorConfiguracao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,9 +45,7 @@ namespace Switch.Infra.Data.Migrations
 
                     b.Property<DateTime>("DataPublicacao");
 
-                    b.Property<string>("Texto")
-                        .IsRequired()
-                        .HasMaxLength(400);
+                    b.Property<string>("Texto");
 
                     b.Property<int>("UsuarioId");
 
